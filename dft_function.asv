@@ -1,0 +1,9 @@
+f
+for k = 1: N
+    sum = 0;
+    for n = 1 :1: N
+       expo = exp(-i*(2*pi/N)*(k-1)*(n-1));
+       sum = sum + (xn(1,n)*expo);    
+    end
+    xk(k) = sum; 
+end

@@ -1,0 +1,14 @@
+clc;
+close all;
+clear all;
+
+xk = [ 2, 1+i,0, 1-i];
+%xn= 1/n * [summation xk e^j2pi/N*n
+
+N = length(xk);
+
+xn = [ ];
+for k=0:1:N-1
+    for n=0:1:N-1
+    end
+end

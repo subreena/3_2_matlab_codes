@@ -1,0 +1,21 @@
+f = 500; % Frequency
+C = 4/pi; % Constant Value
+
+dt = 5.0e-05; % Interval between two time steps
+tpts = (4.0e-3/5.0e-5) + 1; % Total points & quot;(final point initial point)/Interval+1%
+for n = 1: 12 % Values we are considering to approximate Fourier Series
+    for m = 1: tpts % Here, we'll consider all & quot;t& quot; points to cover & quot;from 0 to 4ms interval & quot;
+s1(n,m) = (4/pi)*(1/(2*n - 1))*sin((2*n - 1)*2*pi*f*dt*(m-1)); % Approximate Fourier Series g(t)
+end
+end
+for m = 1:tpts
+a1 = s1(:,m);
+a2(m) = sum(a1);
+end
+% Now, we have a row vector &quot;a2&quot; with total values &quot;81&quot;
+f1 = a2'; % Here, we have final values &quot;f1&quot; (total 81 points) as transpose of a2 computed above
+t = 0.0:5.0e-5:4.0e-3; % it's already given in text (0 to 4ms with interval of 0.05 ms)
+plot(t,f1)
+xlabel('Time, s')
+ylabel('Amplitude, V')
+title('Fourier Series Expansion')

@@ -1,0 +1,20 @@
+%digital analog printing
+
+xn = [ 1 0 1 0 1 1];
+t = 1: 1: 10;
+xt = sin(2);
+
+figure;
+subplot(2,1,1);
+plot(xt);
+xlabel('time');
+ylabel('amplitude');
+title('Analog signal');
+grid on;
+
+subplot(2,1,2);
+stem(xn);
+xlabel('time');
+ylabel('amplitude');
+title('Digital signal');
+grid on;

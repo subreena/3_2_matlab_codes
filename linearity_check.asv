@@ -1,0 +1,43 @@
+clc;
+clear all;
+
+fprintf('1st sequence size : ');
+N1 = input('');
+fprintf('Enter 1st sequence:\n');
+for i = 1 : 1 : N1
+    xn1(1, i) = input('');
+end
+
+fprintf('2nd sequence size : ');
+N2 = input('');
+fprintf('Enter 2nd sequence:\n');
+for i = 1 : 1 : N2
+    xn2(1, i) = input('');
+end
+
+a1 = 2;
+a2 = 3;
+
+left = (a1 * xn1) + (a2 * xn2);
+
+left = dft_function(left, length(left));
+
+left
+
+res = dft_function (xn1, N1);
+
+xn1 = res;
+
+res = dft_function (xn2, N2);
+
+xn2 = res;
+
+right = (a1 * xn1) + (a2 * xn2);
+
+right
+
+if left == right
+    fprintf('sequences are linear');
+else
+    fprintf('sequences are not linear');
+end

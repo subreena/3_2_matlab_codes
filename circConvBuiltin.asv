@@ -1,0 +1,10 @@
+clc;
+clear all;
+close all;
+
+x1 = [2 1 2 1]
+x2 = [1 2 3 4]
+
+yn = cconv(x1,x2,length(x1));
+%cconv(first seq, second seq, length of first seq)%
+yn

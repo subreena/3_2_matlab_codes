@@ -1,0 +1,20 @@
+close all;
+clear all;
+
+sum = 0;
+
+v = [ ];
+for i=1:5
+  fscanf('%d', &v);
+    sum = sum + v(i);
+end
+for i=1:5
+   fprintf('')
+end
+
+
+
+fprintf('Sum: %d ', sum);
+
+
+

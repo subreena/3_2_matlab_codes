@@ -1,0 +1,21 @@
+%unit rectangular
+% Time values
+t = -10:0.01:10;
+
+% Width and height of the rectangle signal
+width = 2;
+height = 1;
+
+% Create the unit rectangle signal
+unit_rectangle = (t >= -width/2) & (t <= width/2);
+
+% Scale the rectangle to the specified height
+unit_rectangle = unit_rectangle * height;
+
+% Plot the unit rectangle signal
+plot(t, unit_rectangle, 'g', 'LineWidth', 2);
+xlabel('Time');
+ylabel('Amplitude');
+title('Unit Rectangle Signal');
+ylim([-0.2, height+0.2]);
+grid on;

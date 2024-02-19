@@ -1,0 +1,28 @@
+hn = [3, 2, 1, 1];
+xn = [1, 2, 3, 3, 2, 1, -1, -2, -3, 5, 6, -1, 2, 0, 2, 1];
+M = 4; %hn
+lenx = length(xn);
+N = 7; %blocksize
+%N = M + L -1
+L = N-M+1;
+hn = [hn,zeros(1,L-1)];
+xxn = reshape(xn,[lenx/L],L);
+xxn
+hn = hn.';
+ans = zeros(1,lenx+M-1);
+for j = 1:L
+    temp=xn(:,j);
+    temp = temp.';
+    temp = [temp,zeros(1,M-1)];
+    temp = temp.';
+    for row = 1:N
+        temp1 = circshift(temp,[row-1,0]);
+        for col=1:N
+            temp2(col,row) = temp1(col,1);
+        end
+    end
+    mul_mat = temp2*hn;
+    mul_mat = mul_mat.';
+    for i=1:N
+        ans(1,L*(j-1)+i) = ans(1,L*(j-1)+i) + mul
+end

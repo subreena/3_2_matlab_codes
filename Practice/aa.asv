@@ -1,0 +1,24 @@
+%digital
+clc;
+close all;
+clear all;
+
+x1 = [1 2 3 4 5 6];
+subplot(2,2,1);
+h = stem(x1,'b');
+axis([-5, 5, -2, 7]);
+set(h, 'LineWidth', 2);
+grid on;
+xlabel('amplitude:');
+ylabel('frequency');
+
+subplot(2,2,2);
+x2 = -pi:0.5:pi;
+y= sin(x2);
+s = plot(x2,y);
+axis([-pi, pi, -1, 1]);
+xticks(-pi:pi);
+set(s, 'LineWidth', 2);
+grid on;
+xlabel('amplitude:');
+ylabel('frequency');

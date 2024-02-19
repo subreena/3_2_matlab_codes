@@ -1,0 +1,14 @@
+clc;
+
+x= [1 2 -2 3];
+k = 1;
+y = circshift(x,[0,k]);
+y
+
+%time reversal
+N = length(x);
+for n=1:N
+    idx=mod(N+n-k,N);
+    y1(1,i) = x(1,idx);
+end
+y1
